@@ -20,6 +20,9 @@ function parseEnvList(env) {
 var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELIMIT);
 
 var cors_proxy = require('./lib/cors-anywhere');
+const express = require('express');
+const app = express();
+
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
   originWhitelist: originWhitelist,
